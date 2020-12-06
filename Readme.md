@@ -1,5 +1,9 @@
 # Advent of Code 2020
 Sharing my solutions for Advent of Code 2020, this one describes the method/libraries I've used.
+
+## 6th Dec
+- Sets, lists and loops
+- 
 ## 5th Dec
 - Simple lists/dicts/loops
 
