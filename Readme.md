@@ -1,6 +1,22 @@
 # Advent of Code 2020
 Sharing my solutions for Advent of Code 2020, this one describes the method/libraries I've used.
+## 12 Dec
+- Simple structures, however manual approach
 
+## 11 Dec
+- Back to numpy arrays again to manipulate structure
+
+## 10 Dec
+- Tricky one - tried generating all solutions, but was too slow.
+- Tried again with recursive functions, also too slow
+- Added caching and it was quick
+
+## 9th Dec
+- Simple lists/enumerate
+
+## 8th Dec
+- Functions!
+- 
 ## 7th Dec
 - Recursive functions
 - 
