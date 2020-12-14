@@ -1,5 +1,9 @@
 # Advent of Code 2020
 Sharing my solutions for Advent of Code 2020, this one describes the method/libraries I've used.
+
+## 14th Dec
+- Binaries are okay, but memory-terms (address, bits, masks etc) are confusing!
+
 ## 13th Dec
 - Found a simple solution, after trying heaps of slow loops
 
