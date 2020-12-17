@@ -12,7 +12,7 @@ def load_data(dimensions=3):
     global cube
     
     cs = tuple([cubezize for i in range(dimensions)]) # Generate a tuple with dimension size
-    cube = np.zeros(cs, dtype=str) # Make a 10 by 20 by 30 array
+    cube = np.zeros(cs, dtype=str) # Make a cubezize*cubezize*cubezize etc array
     cube[:] = '.'
     with open('17/input.txt', 'r') as fp:
         data = fp.read().split('\n')
