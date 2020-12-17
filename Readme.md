@@ -1,6 +1,9 @@
 # Advent of Code 2020
 Sharing my solutions for Advent of Code 2020, this one describes the method/libraries I've used.
 
+## 17th Dec
+- Using numpy array was smart when we extended the number of dimensions...
+
 ## 16th Dec
 - Simple fields, loops and validations
 
