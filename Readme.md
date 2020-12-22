@@ -1,6 +1,9 @@
 # Advent of Code 2020
 Sharing my solutions for Advent of Code 2020, this one describes the method/libraries I've used.
 
+## 22nd Dec
+- More recursion, however this time I manged to do it correctly.
+- I had missed one minor deatil about how many cards that went into the recursive rounds.......
 ## 21st Dec
 - Looping through structures and eliminating one by one...
   
