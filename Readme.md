@@ -1,6 +1,9 @@
 # Advent of Code 2020
 Sharing my solutions for Advent of Code 2020, this one describes the method/libraries I've used.
 
+## 21st Dec
+- Looping through structures and eliminating one by one...
+  
 ## 20th Dec
 - Puzzles and Jigsaws are fun - however it's easy to make this one overcomplicated - numpy is probably not the best way to solve it either.
 - Started with calculating all kinds of stuff, before I realised I could just make a version of every single tile (flipped/rotated) and make sure that top is in connected to bottom etc.
