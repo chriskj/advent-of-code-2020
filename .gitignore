@@ -1,3 +1,4 @@
 code
 .vscode/
 input_pre*.txt
+*__pycache__*
