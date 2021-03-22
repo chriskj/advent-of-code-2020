@@ -1,3 +1,4 @@
+from itertools import permutations
 import time
 
 
@@ -12,9 +13,7 @@ def take_time(func):
 
     return inner
 
-
 # test if there is some performace to be done with the importing function
-
 @take_time
 def original_1():
     amounts = []
@@ -29,6 +28,34 @@ def benchmark_1():
 
     return amounts
 
+# check if we can make a performance boost on the two sums problem
+@take_time
+def original_2(amounts):
+    for x in amounts:
+        for y in amounts:
+            if int(x) + int(y) == 2020:
+                print('We have a winner: %s * %s = %d'% (x, y, int(x)*int(y)))
+
+@take_time
+def benchmark_2(amounts, target):
+    solutions = []
+    candidates = []
+    for amount in amounts:
+        candidate = target - amount
+        if candidate in candidates:
+            solutions.append([candidate, amount])
+        candidates.append(amount)
+
+    print_solutions(solutions, target)
+
+    return solutions
+
+def print_solutions(solutions, target):
+    for solution in solutions:
+        for perm in permutations(solution, len(solution)):
+            add_string = ' + '.join(str(x) for x in perm) 
+            print('we have a winner: ' + add_string + f' = {target}')
+
 def print_performance(run_original, run_benchmark):
     print(f'original run time: {run_original}')
     print(f'benchmark run time: {run_benchmark}')
@@ -37,6 +64,16 @@ def print_performance(run_original, run_benchmark):
 if __name__ == '__main__':
 
     # test importing function
-    run_original, _ = original_1()
-    run_benchmark, _ = benchmark_1()
-    print_performance(run_original, run_benchmark)
+    run_original_1, _ = original_1()
+    run_benchmark_1, amounts = benchmark_1()
+    print_performance(run_original_1, run_benchmark_1)
+
+    # test two sums problem
+    run_original_2, _ = original_2(amounts)
+
+    target = 2020
+    run_benchmark_2, _ = benchmark_2(amounts, target)
+    print_performance(run_original_2, run_benchmark_2)
+
+
+

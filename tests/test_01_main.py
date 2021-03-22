@@ -14,6 +14,15 @@ class Test01(unittest.TestCase):
         for amount in amounts:
             assert isinstance(amount, int)
 
+    def test_two_sums_problem(self):
+        amounts = range(1, 11)
+        target = 10
+        solutions = m.two_sums_problem(amounts, target)
+        assert isinstance(solutions, list)
+        for solution in solutions:
+            assert isinstance(solution, list)
+            assert sum(solution) == target
+
 
 if __name__ == '__main__':
     unittest.main()
