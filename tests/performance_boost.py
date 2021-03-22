@@ -50,6 +50,55 @@ def benchmark_2(amounts, target):
 
     return solutions
 
+# test perfomance on the three sums problem
+
+@take_time
+def original_3(amounts):
+    for x in amounts:
+        for y in amounts:
+            for z in amounts:
+                if int(x) + int(y) + int(z) == 2020:
+                    print('We have a new winner: %s * %s * %s = %d'% (x, y, z, int(x)*int(y)*int(z)))
+
+@take_time
+def benchmark_3(amounts, target):
+
+    amounts.sort()
+    solutions = []
+
+    n = len(amounts)
+    for i in range(n-2):
+
+        if i > 0 and amounts[i] == amounts[i-1]:
+            continue
+
+        l = i + 1
+        r = n - l
+        while l < r:
+            
+            candidates = [amounts[i], amounts[l], amounts[r]]
+            test_target = sum(candidates)
+
+            if test_target < target:
+                l += 1
+            elif test_target > target:
+                r -= 1
+            else:
+                solutions.append(candidates)
+
+                while l < n - 1 and amounts[l] == amounts[l+1]:
+                    l += 1
+
+                while r > 0 and amounts[r] == amounts[r-1]:
+                    r -= 1
+
+                l += 1
+                r -= 1
+
+    print_solutions(solutions, target)
+    
+    return solutions
+
 def print_solutions(solutions, target):
     for solution in solutions:
         for perm in permutations(solution, len(solution)):
@@ -74,6 +123,11 @@ if __name__ == '__main__':
     target = 2020
     run_benchmark_2, _ = benchmark_2(amounts, target)
     print_performance(run_original_2, run_benchmark_2)
+
+    # test the three sums problem
+    run_original_3, _ = original_3(amounts)
+    run_benchmark_3, _ = benchmark_3(amounts, target)
+    print_performance(run_original_3, run_benchmark_3)
 
 
 
