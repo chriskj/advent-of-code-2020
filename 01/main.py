@@ -1,8 +1,9 @@
-amounts = []
 
-with open('01/input.txt', 'r') as fp:
-    for entry in fp.readlines():
-        amounts.append(entry.strip())
+def import_amounts():
+    with open(r'../01/input.txt', 'r') as f:
+        amounts = [int(x.strip()) for x in f.readlines()]
+
+    return amounts
 
 for x in amounts:
     for y in amounts:
